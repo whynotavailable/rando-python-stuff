@@ -16,7 +16,9 @@ for age_stuff in age_data:
     age = age_stuff['age']
     name = age_stuff['name']
 
-    # filter the vehicle data and extrace the first row with the Same name as the name as the age data name
+    # filter the vehicle data and extrace the first row with the same name as the name in the age data
+    # also need to run the list() function because filter gives you an iteratable and not an actual list
+    # list makes it into a concrete list by evaluating the iteratable
     vehicle_row = list(filter(lambda vehicle_stuff: vehicle_stuff['name'] == name, vehicle_data))[0]
 
     # extrace out the car variable for readability
